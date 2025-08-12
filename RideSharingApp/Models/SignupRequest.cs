@@ -10,6 +10,8 @@ namespace RideSharingApp.Models
 
         [JsonProperty("lName")]
         public string LName { get; set; }
+        [JsonProperty("phoneNo")]
+        public string PhoneNo { get; set; }
 
         [JsonProperty("email")]
         public string Email { get; set; }

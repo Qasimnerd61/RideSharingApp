@@ -36,5 +36,15 @@ namespace RideSharingApp.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+
+        [HttpPost("login")]
+        public async Task<ActionResult<UserModel?>> Login([FromBody] LoginRequest request)
+        {
+            var result = await _authService.LoginAsync(request);
+            if (result == null)
+                return Unauthorized("Invalid email or password");
+
+            return Ok(result);
+        }
     }
 }

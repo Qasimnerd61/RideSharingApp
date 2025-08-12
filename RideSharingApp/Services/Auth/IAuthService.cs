@@ -5,5 +5,6 @@ namespace RideSharingApp.Services.Auth
     public interface IAuthService
     {
         Task<int> SignupAsync(SignupRequest request);
+        Task<UserModel?> LoginAsync(LoginRequest request);
     }
 }

@@ -1,6 +1,8 @@
 using RideSharingApp.Middleware;
 using RideSharingApp.Repository.Auth;
+using RideSharingApp.Repository.Rides;
 using RideSharingApp.Services.Auth;
+using RideSharingApp.Services.Rides;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +15,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IRidesRepository, RidesRepository>();
+builder.Services.AddScoped<IRidesService, RidesService>();
 
 // Add Configuration for Connection String
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
